@@ -16,6 +16,8 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+
 }
 
 .choice{
@@ -24,6 +26,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .choice:hover{
@@ -38,4 +41,31 @@ img{
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.scoreBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+.score{
+    font-size: 30px;
+    margin-bottom: 5rem;
+}
+
+#userScore, #compScore{
+    font-size: 40px
+}
+
+#msg{
+    background-color: rgb(25, 43, 37);
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline;
+    cursor: pointer;
 }
