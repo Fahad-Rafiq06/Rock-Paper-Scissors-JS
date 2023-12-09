@@ -3,6 +3,9 @@ let compScore = 0;
 
 const choices = document.querySelectorAll(".choice");
 
+const userScoreP = document.querySelector("#userScore");
+const compScoreP = document.querySelector("#compScore");
+
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
         // console.log(choice)
@@ -27,4 +30,31 @@ const playGame = (userchoice) => {
     if(userchoice === compChoose){
         drawGame()
     }
+    else{
+        let userwin = true;
+        if(userchoice === "rock"){
+            userwin = compChoose === "paper" ? false : true;
+        }
+        else if(userchoice === "paper"){
+            userwin = compChoose === "scissors" ? false : true;
+        }
+        else{
+            userwin = compChoose === "paper" ? true : false;
+        }
+        showWinner(userwin)
+    }
 }
+
+const showWinner = (userwin) => {
+    if(userwin){
+        console.log("You Win");
+        userScore++;
+        userScoreP.innerText = userScore;
+
+    }
+    else{
+        compScore++;
+        compScoreP.innerText = compScore;
+        console.log("You Lose")
+    }
+} 
